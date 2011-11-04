@@ -1,0 +1,14 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="netsight.async">
+
+   <browser:page
+     for="Products.CMFCore.interfaces.ISiteRoot"
+     name="async_example_1"
+     class=".views.AsyncExample1"
+     template="templates/async_start.pt"
+     permission="zope2.View"
+     />
+
+</configure>

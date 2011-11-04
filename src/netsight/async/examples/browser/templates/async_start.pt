@@ -1,0 +1,24 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="context/main_template/macros/master"
+      lang="en" xml:lang="en">
+  <body>
+
+    <metal:main fill-slot="main"
+      <h1 class="documentFirstHeading">netsight.async.example <span tal:replace="view/__name__" /></h1>
+
+      <form action="" method="post">
+        <div class="field">
+        <label for="number">What number of the fibonacci sequence would you like?</label>
+        <input type="text" id="number" name="number"
+               tal:attributes="value request/number|string:1" />
+        </div>
+        <div class="field">
+        <input type="submit" value="Go!" class="context" />
+        </div>
+      </form>
+    </metal:main>
+  </body>
+</html>
