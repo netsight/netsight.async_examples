@@ -6,14 +6,10 @@
       lang="en" xml:lang="en">
   <body>
 
-    <metal:main fill-slot="main"
-      <h1 class="documentFirstHeading">netsight.async.example <span tal:replace="view/__name__" /></h1>
-     
-      <p tal:condition="options/result|nothing">
-         The <span tal:replace="request/number" /><span tal:replace="python:{1: 'st', 2: 'nd', 3: 'rd'}.get(int(request.get('number')[-1]), 'th')" /> number in the fibonacci sequence is <span tal:replace="options/result" />.
-      </p>
+    <metal:main fill-slot="main">
+      <h1 class="documentFirstHeading"><span tal:replace="view/__name__" /></h1>
 
-      <form action="" method="post">
+      <form tal:attributes="action string:${context/absolute_url}/${view/__name__}" method="post">
         <div class="field">
         <label for="number">What number of the fibonacci sequence would you like?</label>
         <input type="text" id="number" name="number"

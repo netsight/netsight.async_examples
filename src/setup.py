@@ -14,7 +14,7 @@ test_requirements = [
 
 setup(
       # Metadata
-      name='netsight.async.examples',
+      name='netsight.async_examples',
       version=version,
       description="Provides examples of netsight.async usage.",
       long_description='\n\n'.join([open(f).read() for f in [
@@ -37,14 +37,13 @@ setup(
       
       # Distribution / build data
       packages=find_packages(exclude=['ez_setup']),
-      namespace_packages=['netsight', 'netsight.async'],
       include_package_data=True,
       zip_safe=False,
       entry_points="""
       # -*- Entry points: -*-
 
       [z3c.autoinclude.plugin]
-      target = plone
+      target = netsight.async
       """,
       
       # Dependencies

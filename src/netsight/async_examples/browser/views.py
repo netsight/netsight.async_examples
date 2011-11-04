@@ -1,4 +1,7 @@
+import locale
+
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+import transaction
 
 from netsight.async.browser.BaseAsyncView import BaseAsyncView
 
@@ -16,9 +19,11 @@ class AsyncExample1(BaseAsyncView):
         f = [0, 1]
         count = 1
         while count <= number:
-            f.append(f.pop(0), f[0])
+            f.append(f.pop(0) + f[0])
             self.set_progress(process_id, count/float(number) * 100.0)
+            count += 1
+            transaction.commit()
             
-        result = f[1]
+        result = locale.format('%d', f[1], grouping=True)
                 
-        return ViewPageTemplate('templates/async_result_1.pt')(result=result)
+        return ViewPageTemplateFile('templates/async_result_1.pt')(self, result=result)
