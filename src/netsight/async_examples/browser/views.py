@@ -6,6 +6,9 @@ import transaction
 from netsight.async.browser.BaseAsyncView import BaseAsyncView
 
 
+locale.setlocale(locale.LC_ALL, '')
+
+
 class AsyncExample1(BaseAsyncView):
     def __run__(self, process_id=None, *args, **kwargs):
         self.set_progress(process_id, 0)
