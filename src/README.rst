@@ -3,7 +3,7 @@ netsight.async.examples
 =======================
 
 Examples for ``netsight.async``, hastily written for Plone
-Conference 2011.
+Conference 2011. Please fork and add your own examples!
 
 Installation
 ============
