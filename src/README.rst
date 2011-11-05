@@ -9,8 +9,8 @@ Installation
 ============
 ::
     
-    git clone https://github.com/netsight/netsight.async.examples
-    cd netsight.async.examples
+    git clone https://github.com/netsight/netsight.async_examples
+    cd netsight.async_examples
     wget http://python-distribute.org/bootstrap.py
     virtualenv --no-site-packages .
     ./bin/python bootstrap.py
